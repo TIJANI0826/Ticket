@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block title %}Inventory Management|Asset Edit{% endblock %}
+{% block content %}
+
+ {% if booking_success %}
+    
+        <div class="alert alert-dismissible alert-success">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <strong>Congrats,</strong> You have successfully created a booking for this Hall. Someone from our staff will contact you shortly.
+        </div>
+    {% endif %}
+          <h1>Book: {{ hall.name }}</h1>
+   
+    <table class="table-bordered table-striped">
+        <tr>
+            <th>ID</th>  
+            <th>Name</th>  
+            <th>Hall Capacity</th>
+            <th>Hall Price</th>
+            <th>Register Event</th>
+            
+        </tr>
+        
+        <tr>
+            <td>{{ object.id }}</td> 
+            <td>{{ object.name }}</td> 
+            <td>The Hall Capacity is :{{ object.capacity }}</td>  
+            <td>{{ object.hall_price }} Naira</td>
+            <td><a class="btn btn-primary btn-lg" href="{% url 'new-booking' hall_pk=object.pk %}" role="button">Book Now</a></td>
+            
+        </tr>
+        
+    </table>
+
+{% endblock %}
+
+
+
+

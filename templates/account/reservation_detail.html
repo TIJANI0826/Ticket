@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+	
+		{% block content %}
+
+		{% if booking_success %}
+    
+			<div class="alert alert-dismissible alert-success">
+			  <button type="button" class="close" data-dismiss="alert">&times;</button>
+			  <strong>Congrats,</strong> You have successfully created a booking for this hall. Someone from our staff will contact you shortly.
+			 </div>
+			    {% endif %}
+
+			    <table class="table-bordered table-striped">
+			    	<tr>
+			    		<th>Name</th>
+			            <th>Hall Capacity</th>
+			            <th>Hall Price</th>
+			            <th>Hall Image</th>
+            
+        			</tr>
+        
+			        <tr>
+			            <td>{{ object.name }}</td>
+			            <td>{{ object.capacity }}</td>
+			            <td>N.{{object.hall_price }}</td>
+			            <td>{{ object.image }}</td>
+			            <td><a  href="{% url 'BookHall' ticket_pk=object.pk %}" role="button">Book Now</a></td>
+			        </tr>        
+    
+        
+		{% endblock %}
+
+
+
+
+
+
+  

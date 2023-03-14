@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+	
+		{% block content %}
+
+		{% for object in object_list %}
+        
+            <p>{{object.ticket.first_name}}</p>
+            <p>{{object.ticket_number}}</p>
+            <p>{{object.expired}}</p>
+    	{% endfor %}
+        
+		{% endblock %}
+

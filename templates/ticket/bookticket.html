@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% load bootstrap3 %}
+
+{% block title %}Event Ticketing|Book Hall{% endblock %}
+
+{% if messages %}
+    {% for message in messages %}
+        {{ message }}
+    {% endfor %}
+{% endif %}
+
+{% block content %}
+    <h1>Book Ticket</h1>
+    <form method="POST" class="item-form">{% csrf_token %}
+        {% bootstrap_form form %}
+        <button type="submit" class="save btn btn-default">Book</button>
+       
+    </form>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+	
+		{% block content %}
+        <form method="POST">
+            {% csrf_token %}
+                <p>ARE YOU SURE YOU WANT TO DELETE THIS HALL "{{object.name}}"</p>
+               <input type="submit" value="Confirm" />
+                <a href="{{ object.get_absolute_url }}">Cancel </a>
+
+
+</form>
+    
+        
+		{% endblock %}
+

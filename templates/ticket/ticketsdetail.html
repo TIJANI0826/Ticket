@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Members</h1>
+    <table class="table-bordered table-striped">
+        <tr>
+            <th>ID</th>  
+            <th>Name</th>  
+            <th>Phone Number</th>
+            <th>Package</th>
+            <th>Package Status</th>
+            <th>Update Ticket</th>
+        </tr>
+        {% for ticket in tickets %}
+        <tr>
+            <td>{{ ticket.id }}</td> 
+            <td>{{ ticket.ticket.name }}</td> 
+            <td>{{ ticket.ticket.phone_number }}</td>  
+            <td>{{ ticket.ticket.package }}</td>
+            <td>{{ ticket.expired }}</td>
+            <td><a href="{% url 'edit_ticket_list' %}{{ ticket.id }}">Update Member</a></td>
+            
+        </tr>
+        {% endfor %}
+    </table>
+
+
+
+
+
+
+    
+
+
+{% endblock %}

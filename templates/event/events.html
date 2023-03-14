@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+{% load humanize %}
+
+{% block content %}
+<h1>Packages</h1>
+
+<div class="container">
+
+     
+<!--LIST GROUP-->
+{% for tickets in tickets %}
+    
+    
+    
+    
+    
+<ul class="media-list">
+ <li class="media">
+ <a class="pull-left" href="#">
+ <img class="media-object" src="{{ reservation.event_banner.url }}"
+ alt="Generic placeholder image">
+ </a>
+<!--
+     <div class="col-md-6 col-lg-4 mb-4">
+        
+        <div class="card-body" >
+            <div class="listing-heading text-center" >
+                <h4 class="text-primary" >45 Drivewood Circle</h4>
+                <p><i class="fas fa-map-marker text-secondary"></i>Norwoord</p>
+            </div>
+            <hr>
+            <div class="row py-2 text-secondary" >
+            <div class="col-6" > <i class="fas fa-th-large" > </i> 300</div>
+                <i class="fas fa-car" ></i> Garage 2
+            </div>
+            <div class="row py-2 text-secondary" >
+                <div class="col-6" >
+                    <i  class="fas fa-bed"> Bedrooms: 3</i>
+                    <div class="col-6">
+                    </div>
+                </div>
+            </div>
+        </div>
+-->
+    
+    
+    </div>
+     
+ <div class="media-body">
+ <h4 class="media-heading">Event Details</h4>
+ <p>This is some sample text. This is some sample text.
+ This is some sample text. This is some sample text.
+ This is some sample text. This is some sample text.
+ This is some sample text. This is some sample text.</p>
+ <p class="lead">The Hall Capacity is {{ halls.capacity | intcomma }}</p>
+ <p class="lead">The Hall Capacity is {{ halls.hall_price|intcomma }}</p>
+  <hr class="my-4">
+    </div>
+    <p class="lead">
+      <a class="btn btn-primary btn-lg" href="{{ tickets.get_absolute_url }}" role="button">Book Now</a>
+    </p>
+
+    
+    
+    
+    
+    
+     
+
+    
+    
+    
+    
+    
+    
+<!--
+<div class="jumbotron">
+<div class="row">
+  <div class="col-sm-4"><h1 class="display-6">{{ tickets.name_event }}</h1><img class="image" src="{{ reservation.event_banner }}" /></div>
+  <div class="col-sm-8"><br><br><br><br><br><br><br><br><strong>
+	<p class="lead">The starting date is  Capacity is {{ tickets.start_date }}</p>
+      <p class="lead">The closing date is  Capacity is {{ tickets.closing_date }}</p>
+	<hr class="my-4">
+	  </div>
+	  <p class="lead">
+	    <a class="btn btn-primary btn-lg" href="{{ tickets.get_absolute_url }}" role="button">Book Now</a>
+	  </p>
+	</strong>
+
+</div>
+</div>
+-->
+{% endfor %}
+
+
+
+
+{% endblock %}
+    
+   

@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% block title %}Inventory Management|Asset Edit{% endblock %}
+{% block content %}
+
+ {% if booking_success %}
+    
+        <div class="alert alert-dismissible alert-success">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <strong>Congrats,</strong> You have successfully created a booking for this Hall. Someone from our staff will contact you shortly.
+        </div>
+    {% endif %}
+          <h1 class="display-6">{{ object.name_event }}</h1>
+          <div class="col-sm-6 col-md-3">
+               <div class="thumbnail">
+               <img src="{{ object.event_banner.url }}"
+               alt="Generic placeholder thumbnail">
+               </div>
+               <div class="caption">
+               <p class="lead">The Event Date is :{{ object.start_date }}</p>
+              <p>
+               
+               <a class="btn btn-primary btn-lg" href="{% url 'event-booking' ticket_pk=object.pk %}" role="button">Book Now</a>
+               </p>
+               </div>
+          </div>
+
+
+
+
+
+
+
+{% endblock %}
+
+
+
+
+   
+
+
+
+<!--
+<h1>{{ object.name }}</h1>
+	<center>
+    <img class ="image" src="{{ object.image.url }}" />
+	</center>
+    <p>{{ object.description }}</p>
+    <p>Rs. {{ object.daily_rent }} / hr</p>
+
+  
+-->
+  
+  
+</div>
+
+
+

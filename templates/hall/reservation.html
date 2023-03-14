@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+{% load humanize %}
+
+{% block content %}
+<h1>Our Halls</h1>
+
+
+
+<div class="container">
+
+      <!-- Heading Row -->
+      <div class="row my-4">
+        <div class="col-lg-8">
+          <img class="img-fluid rounded" src="http://placehold.it/900x400" alt="">
+        </div>
+        <!-- /.col-lg-8 -->
+        <div class="col-lg-4">
+          <h1>Business Name or Tagline</h1>
+          <p>This is a template that is great for small businesses. It doesn't have too much fancy flare to it, but it makes a great use of the standard Bootstrap core components. Feel free to use this template for any project you want!</p>
+          <a class="btn btn-primary btn-lg" href="#">Call to Action!</a>
+        </div>
+        <!-- /.col-md-4 -->
+      </div>
+      <!-- /.row -->
+
+      <!-- Call to Action Well -->
+      <div class="card text-white bg-secondary my-4 text-center">
+        <div class="card-body">
+          <p class="text-white m-0">This call to action card is a great place to showcase some important information or display a clever tagline!</p>
+        </div>
+      </div>
+<!--LIST GROUP-->
+{% for halls in halls %}
+<ul class="media-list">
+ <li class="media">
+ <a class="pull-left" href="#">
+ <img class="media-object" src="{{ object.event_banner.url }}"
+ alt="Generic placeholder image">
+ </a>
+ <div class="media-body">
+ <h4 class="media-heading">Event Details</h4>
+ <p>This is some sample text. This is some sample text.
+ This is some sample text. This is some sample text.
+ This is some sample text. This is some sample text.
+ This is some sample text. This is some sample text.</p>
+ <p class="lead">The Hall Capacity is {{ halls.capacity | intcomma }}</p>
+ <p class="lead">The Hall Capacity is {{ halls.hall_price|intcomma }}</p>
+  <hr class="my-4">
+    </div>
+    <p class="lead">
+      <a class="btn btn-primary btn-lg" href="{{ halls.get_absolute_url }}" role="button">Book Now</a>
+    </p>
+  </strong>
+
+
+
+
+<!-- <div class="jumbotron">
+<div class="row">
+  <div class="col-sm-4"><h1 class="display-6">{{ halls.name }}</h1><img class="image" src="{{ reservation.image }}" /></div>
+  <div class="col-sm-8"><br><br><br><br><br><br><br><br><strong>
+	
+</div>
+</div> -->
+{% endfor %}
+
+
+
+{% endblock %}

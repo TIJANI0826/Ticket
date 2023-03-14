@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}Inventory Management|Edit Ticket{% endblock %}
+{% if messages %}
+{% load bootstrap3 %}
+    {% for message in messages %}
+        {{ message }}
+    {% endfor %}
+{% endif %}
+
+{% block content %}
+    <h1>Update Ticket</h1>
+    <form method="POST" class="item-form">{% csrf_token %}
+        <p>
+            <label>Ticket Name:</label> <span>{{ ticket.ticket.first_name }}</span>
+        </p>
+        {% bootstrap_form form %}
+        
+        <button type="submit" class="save btn btn-default">Update Ticket</button>
+        <a href="{% url 'edit_ticket_list' %}" class="btn btn-default">Cancel</a>
+    </form>
+{% endblock %}

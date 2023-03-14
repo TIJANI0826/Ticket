@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Cloths</h1>
+    <table class="table-bordered table-striped">
+        <tr>
+            <th>ID</th>  
+            <th>Customer Name</th>  
+            <th>Customer Number</th>
+            
+        </tr>
+        {% for  laundry in laundries %}
+        <tr>
+            <td>{{ laundry.id }}</td> 
+            <td>{{ laundry.customer_name }}</td>
+            <td>{{ laundry.custom_number }}</td> 
+            <td>{{ laundry.dropp_off }}</td> 
+            
+           
+            
+        </tr>
+        {% endfor %}
+    </table>
+
+
+
+
+
+
+    
+
+
+{% endblock %}

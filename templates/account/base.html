@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    
+    <title>Inventory App</title>
+   
+	{% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'main.css' %}">
+	
+
+  
+</head>
+<body>
+
+
+   
+<div class="header">   
+<ul id="header">
+{% if request.user.is_authenticated %}
+
+<li class="nav-item"><i class="fa fa-user"></i><b>Hello</b>: {{ user.get_username }}</li>
+<li class="nav-item"> <a class="nav-link" href="{% url 'BookHall' %}">Book Hall</a></li>
+<li class="nav-item"><a class="nav-link" href="{%url 'bookticket' %}">Book Ticket</a></li>
+<li class="nav-item"> <a class="nav-link" href="#">About</a></li>
+
+<li class="nav-item"><i class="fa fa-sign-out"></i><a href="{%url 'logout'%}">Logout</a></li>
+{% else %}
+
+<li class="nav-item"><a class="nav-link" href="{%url 'login' %}">Login</a></li>
+<li class="nav-item"><a class="nav-link" href="{%url 'bookticket' %}">Book Ticket</a></li>
+<li class="nav-item"><a class="nav-link" href="{% url 'user_registration' %}">Sign Up</a></li>
+</ul>
+    </div>
+{% endif %}
+
+  
+
+    
+    {% block content %}
+    {% endblock %}
+</body>
+</html>

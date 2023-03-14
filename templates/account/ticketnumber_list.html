@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load bootstrap3 %}
+	
+		{% block content %}
+        
+            
+            <table class="table-bordered table-striped">
+			    	<tr>
+			    		<th>Ticket ID</th>
+			            <th>Name</th>
+			                        
+        			</tr>
+        	{% for object in object_list %}
+			        <tr>
+                        <td><a>{{ object.id }}</a></td>
+			            <td><a>{{ object.ticket.first_name }}</a></td>
+			            
+			        </tr>        
+    
+            {% endfor %}
+        
+		{% endblock %}
+
+
+
